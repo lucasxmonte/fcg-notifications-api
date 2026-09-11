@@ -1,4 +1,5 @@
 using MassTransit;
+using Prometheus;
 using Serilog;
 using FCG.NotificationsAPI.Consumers;
 
@@ -34,6 +35,10 @@ builder.Services.AddMassTransit(x =>
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
+
+// ── Prometheus metrics ─────────────────────────────────────────────
+app.UseHttpMetrics();
+app.MapMetrics();
 
 // Health check — obrigatório para Kubernetes liveness/readiness probes
 app.MapGet("/health", () => Results.Ok(new
