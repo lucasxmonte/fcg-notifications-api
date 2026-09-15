@@ -84,9 +84,5 @@ record PaymentProcessedEvent(Guid OrderId, Guid UserId, Guid GameId, string Game
     decimal Price, string Status, string? TransactionId, string? MotivoRejeicao, DateTime ProcessedAt);
 ```
 
-## Grupo 17 — Pos-Tech FIAP
-- Letícia Lopes Ribeiro Vasconcelos
+## Grupo — Pos-Tech FIAP
 - Lucas Monte Ferreri Castilho
-- Marcelo Henrique Cornelis Rei
-- Rafael Ribeiro Arantes
-- Vinícius Calixto Real
